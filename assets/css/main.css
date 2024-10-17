@@ -706,92 +706,111 @@ section,
   --default-color: #ffffff;
   --background-color: #000000;
   --heading-color: #ffffff;
+  height: 100vh; /* O puedes usar min-height si prefieres */
+  overflow: hidden; /* Asegúrate de que no haya desbordamiento */
   width: 100%;
-  min-height: 100vh;
+  min-height: 100vh; /* Altura mínima del héroe */
   position: relative;
-  padding: 160px 0 80px 0;
+  padding: 0px 0 0px 50; /* Espaciado superior e inferior */
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.hero img {
-  position: absolute;
-  inset: 0;
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: 1;
+.carousel-item {
+  position: relative;
+  height: 100vh; /* Cada item ocupa el 100% de la altura de la ventana */
 }
 
-.hero:before {
-  content: "";
-  background: color-mix(in srgb, var(--background-color), transparent 80%);
+.carousel-item img {
+  width: 100%;
+  height: 100%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Mantiene la proporción de la imagen */
+  object-fit: cover; /* Recorta la imagen para cubrir el área */
+  position: absolute; /* Asegura que la imagen cubra el contenedor */
+  top: 0;
+  left: 0;
+}
+
+.carousel-caption {
   position: absolute;
-  inset: 0;
+  bottom: 20px; /* Ajusta la posición de las leyendas */
+  left: 50%;
+  transform: translateX(-50%);
+  color: var(--contrast-color);
   z-index: 2;
 }
 
-.hero .container {
-  position: relative;
-  z-index: 3;
+.carousel-control-prev,
+.carousel-control-next {
+  filter: invert(1); /* Cambia el color de los controles a blanco */
 }
 
 .hero h2 {
   color: var(--contrast-color);
   margin: 0;
-  font-size: 44px;
-  font-weight: 700;
+  font-size: 44px; /* Tamaño de la fuente del título */
+  font-weight: 700; /* Grosor de la fuente del título */
 }
 
 .hero p {
-  color: color-mix(in srgb, var(--default-color), transparent 20%);
-  margin: 5px 0 0 0;
-  font-size: 20px;
+  color: color-mix(in srgb, var(--default-color), transparent 20%); /* Color del texto */
+  margin: 5px 0 0 0; /* Espaciado */
+  font-size: 20px; /* Tamaño de la fuente del párrafo */
 }
 
 .hero .sign-up-form {
-  margin-top: 20px;
-  padding: 10px;
-  border-radius: 7px;
-  background: #fff;
-  box-shadow: 0 15px 30px 0 rgba(0, 0, 0, 0.1);
+  margin-top: 20px; /* Margen superior */
+  padding: 10px; /* Padding interno */
+  border-radius: 7px; /* Bordes redondeados */
+  background: #fff; /* Fondo blanco */
+  box-shadow: 0 15px 30px 0 rgba(0, 0, 0, 0.1); /* Sombra del formulario */
 }
 
 .hero .sign-up-form .form-control {
-  border: none;
+  border: none; /* Sin borde */
 }
 
 .hero .sign-up-form .form-control:active,
 .hero .sign-up-form .form-control:focus {
-  outline: none;
-  box-shadow: none;
+  outline: none; /* Sin contorno en el foco */
+  box-shadow: none; /* Sin sombra en el foco */
 }
 
 .hero .sign-up-form input[type=submit] {
-  box-shadow: 0 15px 30px 0 rgba(0, 0, 0, 0.2);
-  background-color: var(--accent-color);
-  border-color: var(--accent-color);
-  padding: 8px 20px 10px 20px;
-  border-radius: 7px;
-  color: var(--contrast-color);
+  box-shadow: 0 15px 30px 0 rgba(0, 0, 0, 0.2); /* Sombra del botón */
+  background-color: var(--accent-color); /* Color de fondo */
+  border-color: var(--accent-color); /* Color del borde */
+  padding: 8px 20px 10px 20px; /* Padding del botón */
+  border-radius: 7px; /* Bordes redondeados del botón */
+  color: var(--contrast-color); /* Color del texto del botón */
 }
 
 .hero .sign-up-form input[type=submit]:hover {
-  background-color: color-mix(in srgb, var(--accent-color), transparent 10%);
+  background-color: color-mix(in srgb, var(--accent-color), transparent 10%); /* Color de fondo al pasar el mouse */
 }
 
+/* Media Queries para Responsividad */
 @media (max-width: 600px) {
   .hero {
-    background-size: contain; /* Asegura que toda la imagen se vea en pantallas pequeñas */
-    height: 100%; /* Ajusta la altura según tus necesidades */
+    padding: 80px 0 40px 0; /* Reduce el padding en pantallas pequeñas */
+  }
+
+  .hero h2 {
+    font-size: 28px; /* Ajusta el tamaño de fuente en pantallas pequeñas */
   }
 
   .hero p {
-    font-size: 18px;
+    font-size: 16px; /* Ajusta el tamaño de fuente en pantallas pequeñas */
+  }
+
+  .carousel-caption {
+    font-size: 16px; /* Tamaño de la fuente de la leyenda en pantallas pequeñas */
   }
 }
+
 
 /*--------------------------------------------------------------
 # Clients Section
