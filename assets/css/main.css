@@ -718,7 +718,14 @@ section,
       max-height: 60vh; /* Limita la altura en móviles */
   }
 }
+.hero-img {
+  border-radius: 20px; /* Ajusta el valor según el nivel de redondeo deseado */
+}
 
+/* Para las imágenes en la sección de portfolio */
+.portfolio-item img {
+  border-radius: 20px; /* Aplica bordes redondeados a las imágenes de la sección de portfolio */
+}
 /*--------------------------------------------------------------
 # Clients Section
 --------------------------------------------------------------*/
